@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "PlatformIO/Wokwi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "master_board", "top": -57, "left": -375, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd2", "top": 44.8, "left": 44, "attrs": { "pins": "i2c" } },
+    {
+      "type": "board-bmp180",
+      "id": "bmp1",
+      "top": 268.64,
+      "left": -197.06,
+      "rotate": 270,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "master_board:A4", "lcd2:SDA", "green", [ "v0" ] ],
+    [ "lcd2:SCL", "master_board:A5", "green", [ "h0" ] ],
+    [ "lcd2:VCC", "master_board:5V", "red", [ "h0" ] ],
+    [ "lcd2:GND", "master_board:GND.2", "black", [ "h0" ] ],
+    [ "bmp1:3.3V", "master_board:3.3V", "red", [ "v-105.6", "h-86.21" ] ],
+    [ "bmp1:SDA", "master_board:A4", "green", [ "v0" ] ],
+    [ "bmp1:SCL", "master_board:A5", "green", [ "v-115.2", "h38.59" ] ],
+    [ "bmp1:GND", "master_board:GND.2", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
